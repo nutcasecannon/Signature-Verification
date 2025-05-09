@@ -44,3 +44,4 @@ iii.Thresholding: Otsu's thresholding is applied (cv2.threshold) to convert the 
 4.Output: Two versions of the processed image are returned:
 Filtered Image: The binary version after thresholding.
 Grayscale Image: A copy of the original grayscale image.
+--------------------------------------------------------------------------------------------------------
