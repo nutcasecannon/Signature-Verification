@@ -74,5 +74,4 @@ grayscale image to a binary image, leading to a clearer contour of the signature
 2. Noise Removal: A Gaussian filter has been used to extract noise and amplify signature image
 structures, also blurring the images and reducing noise.
 3. Resizing: This process involves resizing of all the photos to the same size (800 x 1500 pixels).
-
 --------------------------------------------------------------------------------------------------------
