@@ -34,11 +34,11 @@ This methodology for offline handwritten signature verification utilizes a Convo
 ### InceptionSVGNet Architecture
 The architecture of InceptionSVGNet builds upon the principles of Inception V1, emphasizing parallel convolutional layers with varying kernel sizes to extract multi-scale features effectively. The model incorporates multiple filters at each layer level, enhancing feature diversity without significantly increasing depth.  
 
-1.Inception Modules: Each Inception module consists of four parallel convolutional layers with kernel sizes of 16×16, 8×8, 4×4, and 2×2. These layers operate simultaneously on the input data, extracting features at different scales. To create a single feature map, the outputs from these layers are concatenated along the channel dimension.  
-2.Layer Configuration: The network begins with an initial convolutional block that generates 64 feature maps from the input tensor. Three successive Inception modules follow, with increasing filter counts (16, 24, and 32 filters in each module) and decreasing spatial dimensions through average pooling layers. A final convolutional layer with 16 filters further refines the feature representation before flattening.  
-3.Classification : After flattening the feature maps, two connected dense layers are used for high-level feature learning. Dropout regularization (rate = 0.5) is applied between these layers to prevent overfitting. Finally, a softmax layer outputs probabilities for the two classes: genuine and forged signatures.  
+1. Inception Modules : Each Inception module consists of four parallel convolutional layers with kernel sizes of 16×16, 8×8, 4×4, and 2×2. These layers operate simultaneously on the input data, extracting features at different scales. To create a single feature map, the outputs from these layers are concatenated along the channel dimension.  
+2. Layer Configuration : The network begins with an initial convolutional block that generates 64 feature maps from the input tensor. Three successive Inception modules follow, with increasing filter counts (16, 24, and 32 filters in each module) and decreasing spatial dimensions through average pooling layers. A final convolutional layer with 16 filters further refines the feature representation before flattening.  
+3. Classification : After flattening the feature maps, two connected dense layers are used for high-level feature learning. Dropout regularization (rate = 0.5) is applied between these layers to prevent overfitting. Finally, a softmax layer outputs probabilities for the two classes: genuine and forged signatures.  
 
-**Training and Evaluation**  
+### Training and Evaluation  
 The training process involves feeding paired pre-processed images (filtered and grayscale) into the CNN model. The network is trained using sparse categorical cross-entropy as the loss function and evaluated on publicly available datasets - CEDAR and BHSig260. These contain both authentic signatures and skilled forgeries, providing diverse samples for robust model evaluation.  
 
 ## Method 2:
