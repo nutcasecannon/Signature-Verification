@@ -1,6 +1,6 @@
 # Offline Signature Verification Using:
-(1) CNN inspired by InceptionV1 
-(2) Using SURF and SVM
+(1) CNN inspired by InceptionV1  
+(2) Using SURF and SVM  
 
 Reference Research Paper : DOI:10.1109/ICIIP47207.2019.8985925
 
@@ -30,7 +30,7 @@ The ICDAR 2009 Signature Verification Competition (SigComp2009) dataset, also kn
 -------------------------------------------------------------------------------------------------------
 # Methodology
 
-# Method 1:
+## Method 1:
 
 This methodology for offline handwritten signature verification utilizes a Convolutional Neural Network (CNN) inspired by the Inception V1 (GoogleNet) architecture. The model adopts a writer-independent approach, treating genuine and forged signatures as distinct classes.
 
@@ -44,7 +44,7 @@ The architecture of InceptionSVGNet builds upon the principles of Inception V1, 
 Training and Evaluation
 The training process involves feeding paired pre-processed images (filtered and grayscale) into the CNN model. The network is trained using sparse categorical cross-entropy as the loss function and evaluated on publicly available datasets - CEDAR and BHSig260. These contain both authentic signatures and skilled forgeries, providing diverse samples for robust model evaluation.
 
-# Method 2:
+## Method 2:
 
 The proposed offline signature verification is a combination of SURF algorithm and non-linear
 SVM. This approach is writer independent.
@@ -60,18 +60,18 @@ SVM is a linear discriminant classifier used to verify signature images. It clas
 -------------------------------------------------------------------------------------------------------
 
 # Preprocessing
-# Method 1:
-1.Image Loading: The image is read in grayscale mode using OpenCV (cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)).
-2.Resizing: The image is resized to a fixed dimension of 256×128 pixels using OpenCV's cv2.resize. This ensures uniformity across all input images.
-3.Filtering:
-i.Dilation: The image undergoes dilation using a 3×3 kernel (cv2.dilate). This operation enhances features such as edges or strokes in the signature.
-ii.Gaussian Blur: A Gaussian blur is applied with a 5×5 kernel (cv2.GaussianBlur). This smoothens the image and reduces noise.
-iii.Thresholding: Otsu's thresholding is applied (cv2.threshold) to convert the image into a binary format (black and white). This is particularly useful for isolating signature strokes from the background.
-4.Output: Two versions of the processed image are returned:
-Filtered Image: The binary version after thresholding.
-Grayscale Image: A copy of the original grayscale image.
+## Method 1:
+1.Image Loading: The image is read in grayscale mode using OpenCV (cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)).  
+2.Resizing: The image is resized to a fixed dimension of 256×128 pixels using OpenCV's cv2.resize. This ensures uniformity across all input images.  
+3.Filtering:  
+  i.Dilation: The image undergoes dilation using a 3×3 kernel (cv2.dilate). This operation enhances features such as edges or strokes in the signature.  
+  ii.Gaussian Blur: A Gaussian blur is applied with a 5×5 kernel (cv2.GaussianBlur). This smoothens the image and reduces noise.  
+  iii.Thresholding: Otsu's thresholding is applied (cv2.threshold) to convert the image into a binary format (black and white). This is particularly useful for isolating signature strokes from the background.
+4.Output: Two versions of the processed image are returned:  
+  Filtered Image: The binary version after thresholding.  
+  Grayscale Image: A copy of the original grayscale image.
 
-# Method 2:
+## Method 2:
 1. Binarization: This process transforms the color image to grayscale and then converts the
 grayscale image to a binary image, leading to a clearer contour of the signature.
 2. Noise Removal: A Gaussian filter has been used to extract noise and amplify signature image
