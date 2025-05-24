@@ -21,13 +21,13 @@ The dataset utilized for this offline signature verification study is the CEDAR 
 **BHSig260 signature dataset**  
 The BHSig260 dataset is composed of two subsets: BHsig-B (Bengali) and BHsig-H (Hindi). The BHSig260 dataset is used for research in offline signature verification, specifically for multilingual scenarios. BHSig260 (Bengali) signature dataset contains signatures from 100 persons each having 24 authentic and 30 forged signatures, totaling 2,400 authentic and 3,000 forged signatures. BHSig260 (Hindi) signature dataset contains signatures from 160 persons each having 24 authentic and 30 forged signatures, totaling 3,840 authentic and 4,800 forged signatures.
 
-**ICDAR2009**
+**ICDAR2009**  
 The ICDAR 2009 Signature Verification Competition (SigComp2009) dataset, also known as "NFI-online" and "NFI-offline," contains both online and offline signature samples, including genuine signatures from 100 individuals and forgeries from 33 individuals. The online dataset captures dynamic handwriting movement, while the offline dataset contains static images. This dataset is recognized for its complexity due to the presence of skilled forgeries, and it includes variability in writing styles, pressure, and orientation, making it ideal for testing the robustness of signature verification systems.
 
 -------------------------------------------------------------------------------------------------------
 # Methodology
 
-## Method 1:
+## Method 1 :
 
 This methodology for offline handwritten signature verification utilizes a Convolutional Neural Network (CNN) inspired by the Inception V1 (GoogleNet) architecture. The model adopts a writer-independent approach, treating genuine and forged signatures as distinct classes.
 
@@ -41,7 +41,7 @@ The architecture of InceptionSVGNet builds upon the principles of Inception V1, 
 ### Training and Evaluation  
 The training process involves feeding paired pre-processed images (filtered and grayscale) into the CNN model. The network is trained using sparse categorical cross-entropy as the loss function and evaluated on publicly available datasets - CEDAR and BHSig260. These contain both authentic signatures and skilled forgeries, providing diverse samples for robust model evaluation.  
 
-## Method 2:
+## Method 2 :
 
 The proposed offline signature verification is a combination of SURF algorithm and non-linear SVM. This approach is writer independent.
 
@@ -54,7 +54,7 @@ SVM is a linear discriminant classifier used to verify signature images. It clas
 -------------------------------------------------------------------------------------------------------
 
 # Preprocessing  
-## Method 1:  
+## Method 1 :  
 1. Image Loading: The image is read in grayscale mode using OpenCV (cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)).  
 2. Resizing: The image is resized to a fixed dimension of 256×128 pixels using OpenCV's cv2.resize. This ensures uniformity across all input images.  
 3. Filtering:  
@@ -65,7 +65,7 @@ SVM is a linear discriminant classifier used to verify signature images. It clas
    i. Filtered Image: The binary version after thresholding.  
    ii. Grayscale Image: A copy of the original grayscale image.
 
-## Method 2:
+## Method 2 :
 1. Binarization: This process transforms the color image to grayscale and then converts the
 grayscale image to a binary image, leading to a clearer contour of the signature.
 2. Noise Removal: A Gaussian filter has been used to extract noise and amplify signature image
