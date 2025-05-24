@@ -1,4 +1,7 @@
-Offline Signature Verification Using: (1) CNN inspired by InceptionV1 (2) Using SURF and SVM
+# Offline Signature Verification Using:
+(1) CNN inspired by InceptionV1 
+(2) Using SURF and SVM
+
 Reference Research Paper : DOI:10.1109/ICIIP47207.2019.8985925
 
 The code is run on Kaggle using TPU for faster computation.
@@ -10,7 +13,7 @@ ICDAR2009
 https://www.kaggle.com/datasets/ishaniroy03/icdar-2009
 
 -------------------------------------------------------------------------------------------------------
-Dataset Description
+# Dataset Description
 
 CEDAR
 The dataset utilized for this offline signature verification study is the CEDAR signature dataset, a widely recognized benchmark in signature verification research. This dataset comprises a total of 2,640 images, collected from 55 persons. Each individual contributed 24 genuine signatures, amounting to 1,320 authentic samples, along with 24 forged signatures, leading to an equal number of 1,320 forged samples. All images are in .png format. The forged signatures were carefully created to mimic the genuine ones, making the dataset highly suitable for evaluating the robustness of signature verification systems.
@@ -25,9 +28,9 @@ ICDAR2009
 The ICDAR 2009 Signature Verification Competition (SigComp2009) dataset, also known as "NFI-online" and "NFI-offline," contains both online and offline signature samples, including genuine signatures from 100 individuals and forgeries from 33 individuals. The online dataset captures dynamic handwriting movement, while the offline dataset contains static images. This dataset is recognized for its complexity due to the presence of skilled forgeries, and it includes variability in writing styles, pressure, and orientation, making it ideal for testing the robustness of signature verification systems.
 
 -------------------------------------------------------------------------------------------------------
-Methodology
+# Methodology
 
-Method 1:
+# Method 1:
 
 This methodology for offline handwritten signature verification utilizes a Convolutional Neural Network (CNN) inspired by the Inception V1 (GoogleNet) architecture. The model adopts a writer-independent approach, treating genuine and forged signatures as distinct classes.
 
@@ -41,7 +44,7 @@ The architecture of InceptionSVGNet builds upon the principles of Inception V1, 
 Training and Evaluation
 The training process involves feeding paired pre-processed images (filtered and grayscale) into the CNN model. The network is trained using sparse categorical cross-entropy as the loss function and evaluated on publicly available datasets - CEDAR and BHSig260. These contain both authentic signatures and skilled forgeries, providing diverse samples for robust model evaluation.
 
-Method 2:
+# Method 2:
 
 The proposed offline signature verification is a combination of SURF algorithm and non-linear
 SVM. This approach is writer independent.
@@ -56,8 +59,8 @@ SVM is a linear discriminant classifier used to verify signature images. It clas
 
 -------------------------------------------------------------------------------------------------------
 
-Preprocessing
-Method 1:
+# Preprocessing
+# Method 1:
 1.Image Loading: The image is read in grayscale mode using OpenCV (cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)).
 2.Resizing: The image is resized to a fixed dimension of 256×128 pixels using OpenCV's cv2.resize. This ensures uniformity across all input images.
 3.Filtering:
@@ -68,7 +71,7 @@ iii.Thresholding: Otsu's thresholding is applied (cv2.threshold) to convert the 
 Filtered Image: The binary version after thresholding.
 Grayscale Image: A copy of the original grayscale image.
 
-Method 2:
+# Method 2:
 1. Binarization: This process transforms the color image to grayscale and then converts the
 grayscale image to a binary image, leading to a clearer contour of the signature.
 2. Noise Removal: A Gaussian filter has been used to extract noise and amplify signature image
