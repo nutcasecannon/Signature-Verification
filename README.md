@@ -1,6 +1,6 @@
 # Offline Signature Verification Using:
-### 1. CNN inspired by InceptionV1  
-### 2. Using SURF and SVM  
+#### Method 1 : CNN inspired by InceptionV1  
+#### Method 2 : Using SURF and SVM  
 
 *Reference Research Paper* : DOI:10.1109/ICIIP47207.2019.8985925
 
